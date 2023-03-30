@@ -9,6 +9,9 @@ input.addEventListener("input", function(event) {
   formData[input.name] = input.value; // atualiza o valor do objeto com o valor atual do input
 });
 
+//input.addEventListener("input", errorForm);
+
+
 function handleClick(event) {
   inputAll.forEach((input) => {
     if(input.value === "") {
@@ -19,7 +22,7 @@ function handleClick(event) {
 }
 
 function errorForm() {
-  
+
   spanContainer.forEach((span) => {
     if(span.innerText === ""){
       span.classList.add("errorMessage"); 
@@ -28,37 +31,32 @@ function errorForm() {
       span.classList.add("error");
     }
     spanImg.forEach((img) => {
-    if(img.classList.contains("errorIcon")) {
-      img.classList.add("selected");
-    }
+      if(img.classList.contains("errorIcon")) {
+        img.classList.add("selected");
+      }
     })
-  inputAll.forEach((input) => {
-    if(input.classList.contains("submit") === false && input.value === "") {
-      input.classList.add("error");
-      input.nextElementSibling.nextElementSibling.classList.add("error");
-    } else {
-      input.classList.remove("error");
-      input.nextElementSibling.nextElementSibling.classList.remove("error");
-      input.nextElementSibling.classList.remove("selected");
-
-    }
-  })  
+    inputAll.forEach((input) => {
+      if(input.classList.contains("submit") === false && input.value === "") {
+        input.classList.add("error");
+        if (input.nextElementSibling) {
+          input.nextElementSibling.classList.add("errorMessage");
+          if (input.nextElementSibling.nextElementSibling) {
+            input.nextElementSibling.nextElementSibling.classList.add("error");
+          }
+        }
+      } else {
+        input.classList.remove("error");
+        if (input.nextElementSibling) {
+          input.nextElementSibling.classList.remove("errorMessage");
+          input.nextElementSibling.classList.remove("selected");
+          if (input.nextElementSibling.nextElementSibling) {
+            input.nextElementSibling.nextElementSibling.classList.remove("error");
+          }
+        }
+      }
+    })  
   })
 }
-
-function resetForm() {
-  spanContainer.forEach((span) => {
-    span.classList.remove("errorMessage");
-  })
-  spanContainer.forEach((span) => {
-    span.classList.remove("error");
-  })
-  inputAll.forEach((input) => {
-    input.value = "";
-  });
-  formData = {};
-  }
-
 
 
 submitBtn.addEventListener("click", handleClick);
