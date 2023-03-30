@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <section class="text-info">
+      <h1>Learn to code by<br> watching others</h1>
+
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+        but understanding how developers think is invaluable.</p>
+    </section>
+
+    <section class="form-container">
+      <span class="spanFull"><span>Try it free 7 days</span> then $20/mo. thereafter</span>
+      <form>
+        <input type="text" id="name" placeholder="First Name" value="">
+        <span class="errorIcon">
+          <img src="/images/icon-error.svg" alt="">
+        </span>
+        <span data-id="first-name" class="errorMessage">First name cannot be empty</span>
+        <input type="text" id="lastName" placeholder="Last Name" value="">
+        <span class="errorIcon">
+          <img src="/images/icon-error.svg" alt="">
+        </span>
+        <span data-id="last-name" class="errorMessage">Last name cannot be empty</span>
+        <input type="email" id="email" placeholder="Email Address" value="">
+        <span class="errorIcon">
+          <img src="/images/icon-error.svg" alt="">
+        </span>
+        <span data-id="email" class="errorMessage">Looks like this is not an email</span>
+        <input type="password" id="password" placeholder="Password" value="">
+        <span class="errorIcon">
+          <img src="/images/icon-error.svg" alt="">
+        </span>
+        <span data-id="password" class="errorMessage">Password cannot be empty</span>
+        <input class="submit" type="submit" value="Claim your free trial">
+
+        <span class="spanAgree">By clicking the button, you are agreeing to our <span>Terms and Services</span></span>
+      </form>
+    </section>
+
+
+  </main>
+  <script src="/script.js"></script>
+</body>
+
+</html>

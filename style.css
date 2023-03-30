@@ -1,0 +1,204 @@
+body, h1, span, p {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  
+  font-family: "Poppins", sans-serif;
+  background: url("/images/bg-intro-desktop.png");
+  background-color: hsl(0, 100%, 74%) ;
+  overflow-x: hidden;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 40px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+form input {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid hsl(255, 4%, 78%);
+  position: relative;
+
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 25px;
+}
+
+.text-info {
+  grid-column: 1;
+  color: white;
+  width: 600px;
+}
+
+.form-container {
+  grid-column: 2;
+  width: 600px;
+}
+
+.spanFull {
+  display: block;
+  background: hsl(248, 32%, 49%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.spanFull span {
+  font-weight: bold;
+}
+
+.spanAgree {
+  font-size: .7em;
+  text-align: center;
+  color: hsl(246, 25%, 77%);
+}
+
+.spanAgree span {
+  color: hsl(0, 100%, 74%);
+  font-weight: 700;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+.submit {
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  background: hsl(154, 59%, 51%);
+  border: 1px solid hsl(154, 70%, 41%);
+  box-shadow: 0px 4px 2px hsl(154, 70%, 41%);
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: hsl(154, 70%, 41%);
+}
+
+.errorIcon {
+  display: none;
+}
+
+.errorIcon.selected  {
+  position: relative;
+  top: -65px;
+  left: 470px;
+  z-index: 200;
+  display: block;
+}
+
+form input.error {
+  border: 1px solid hsl(0, 100%, 74%);
+}
+
+.errorMessage {
+  width: auto;
+  position: relative;
+  font-weight: 500;
+  font-style: italic;
+  left: 350px;
+  top: -15px;
+  font-size: 0.7em;
+  color: hsl(0, 100%, 74%);
+  display: none;
+}
+
+.errorMessage.error {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+  }
+  .text-info {
+    text-align: center;
+    margin-top: 20px;
+    width: auto;
+    padding: 50px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .form-container {
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+  }
+  .errorMessage {
+    left: 180px;
+  }
+  .errorIcon.selected  {
+    left: 320px;
+  }
+}
+
+@media (max-width: 450px) {
+  .errorMessage {
+    width: auto;
+    left: 60px;
+  }
+  .form-container {
+    width: auto;
+    padding: 20px;
+  }
+  .errorIcon.selected  {
+    left: 180px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+### Primary
+
+- Red: hsl(0, 100%, 74%) 
+- Green: hsl(154, 59%, 51%)
+
+### Accent
+
+- Blue: hsl(248, 32%, 49%)
+
+### Neutral
+
+- Dark Blue: hsl(249, 10%, 26%) 
+- Grayish Blue: hsl(246, 25%, 77%)*/
